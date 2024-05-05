@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import "./App.css";
 import { SpeechService } from "./service/SpeechService";
 import { SpeechServiceContext } from "./SpeechServiceContext";
@@ -6,10 +6,6 @@ import { TaskItemList } from "./Components/TaskItemList";
 
 function App() {
   const speechService = useMemo(() => new SpeechService(), []);
-
-  function speak(content: string): void {
-    speechService.speak(content);
-  }
 
   return (
     <SpeechServiceContext.Provider value={speechService}>
@@ -28,7 +24,6 @@ function App() {
 
       <div className="card">
         <TaskItemList />
-        <button onClick={() => speak("Hallo")}>Speak</button>
       </div>
     </SpeechServiceContext.Provider>
   );
