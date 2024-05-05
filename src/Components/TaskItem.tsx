@@ -3,12 +3,11 @@ import { SpeechServiceContext } from "../SpeechServiceContext";
 import "./TaskItem.css";
 
 type TaskItemProps = {
-  title: string;
   audioText: string;
   icon?: string;
 };
 
-export function TaskItem({ title, audioText, icon }: TaskItemProps) {
+export function TaskItem({ audioText, icon }: TaskItemProps) {
   const speechService = useContext(SpeechServiceContext);
 
   function speak() {
@@ -22,7 +21,7 @@ export function TaskItem({ title, audioText, icon }: TaskItemProps) {
       {/* <span className="material-icons-round">{icon}</span>
       <span className="material-icons-sharp">{icon}</span>
     <span className="material-icons-two-tone">{icon}</span> */}
-    <p>{audioText}</p>
+      <p>{audioText}</p>
     </div>
   );
 }
