@@ -11,7 +11,13 @@ export function TaskItem({ task }: TaskItemProps) {
   const speechService = useContext(SpeechServiceContext);
 
   function speak() {
-    speechService.speak(task.audioText);
+    if (!speechService) return;
+
+    if (task.pronounciation) {
+      speechService.speak(task.pronounciation);
+    } else {
+      speechService.speak(task.audioText);
+    }
   }
 
   return (
