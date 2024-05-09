@@ -13,7 +13,6 @@ export function TaskItemList() {
 
   async function getTasks() {
     const { data: tasks } = await supabase.from("Task").select();
-    console.log('data:', tasks);
 
     if (tasks && tasks.length > 0) {
       setTasks(tasks);
@@ -23,7 +22,7 @@ export function TaskItemList() {
   return (
     <div className="task-list">
       {tasks.map((task: Task) => (
-        <TaskItem id={task.id} audioText={task.audioText} icon={task.icon} />
+        <TaskItem key={task.id} id={task.id} audioText={task.audioText} icon={task.icon} />
       ))}
     </div>
   );
