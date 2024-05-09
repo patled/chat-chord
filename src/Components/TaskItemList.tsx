@@ -22,7 +22,7 @@ export function TaskItemList() {
   return (
     <div className="task-list">
       {tasks.map((task: Task) => (
-        <TaskItem key={task.id} id={task.id} audioText={task.audioText} icon={task.icon} />
+        <TaskItem key={task.id} audioText={task.audioText} icon={task.icon} />
       ))}
     </div>
   );
