@@ -16,11 +16,10 @@ export function TaskItem({ task }: TaskItemProps) {
 
   return (
     <div className="task" onClick={() => speak()}>
-      {/* <span className="material-icons">{icon}</span> */}
-      <span className="material-icons-outlined">{task.icon}</span>
-      {/* <span className="material-icons-round">{icon}</span>
-      <span className="material-icons-sharp">{icon}</span>
-    <span className="material-icons-two-tone">{icon}</span> */}
+      {task.imageUrl && <img src={task.imageUrl} alt="image" />}
+      {task.icon && !task.imageUrl && (
+        <span className="material-icons-outlined">{task.icon}</span>
+      )}
       <p>{task.audioText}</p>
     </div>
   );
