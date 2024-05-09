@@ -16,6 +16,8 @@ export function TaskItemList() {
 
     if (tasks && tasks.length > 0) {
       setTasks(tasks);
+    } else {
+      setTasks([]);
     }
   }
 
