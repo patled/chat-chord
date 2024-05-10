@@ -10,6 +10,7 @@ function App() {
   return (
     <SpeechServiceContext.Provider value={speechService}>
       <select
+        hidden
         onChange={(e) => {
           console.log(parseInt(e.target.value));
           speechService.voiceNumber = parseInt(e.target.value);
@@ -22,9 +23,7 @@ function App() {
         ))}
       </select>
 
-      <div className="card">
-        <TaskItemList />
-      </div>
+      <TaskItemList />
     </SpeechServiceContext.Provider>
   );
 }
