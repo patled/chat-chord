@@ -12,10 +12,10 @@
   margin: 1rem;
   width: 15rem;
   height: 15rem;
+  cursor: pointer;
 
   img {
-    height: 80%;
-    
+    height: 80%;    
     border-radius: 5px;
   }
 
